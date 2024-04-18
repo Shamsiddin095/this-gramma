@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
 }
 .answers {
   display: none;
@@ -12,6 +13,9 @@
   max-width: 1440px;
   margin: 10px auto;
   border: 1px solid black;
+}
+.container-unit {
+  display: none;
 }
 header {
   display: flex;
@@ -28,7 +32,7 @@ header {
   background: orange;
   border: none;
   color: white;
-  font-size: 20px;
+
   cursor: pointer;
 }
 .sgn-btn button:hover {
@@ -43,6 +47,8 @@ header {
 }
 #theme {
   font-style: italic;
+  font-size: 24px;
+  font-weight: bold;
 }
 .unit {
   display: flex;
@@ -65,11 +71,13 @@ header {
   text-align: center;
 }
 .block p {
-  font-weight: bold;
   font-size: 18px;
 }
 .col {
-  color: red;
+  color: black;
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 50%;
 }
 .col2 {
   font-weight: 700;
@@ -78,11 +86,11 @@ header {
   font-weight: 100;
   font-style: italic;
   color: grey;
-  font-size: 16px;
 }
 
 #unitH1 {
   padding-left: 10px;
+  font-size: 24px;
 }
 h3 {
   padding-left: 20px;
@@ -91,7 +99,6 @@ h3 {
 }
 .tobe-form {
   padding-top: 30px;
-
   display: flex;
   justify-content: space-evenly;
   gap: 50px;
@@ -100,15 +107,13 @@ h3 {
 .exml {
   padding: 10px;
 }
-.exml p {
-  font-weight: bold;
-  line-height: 1.5;
+.tobeimg {
+  width: 320px;
 }
 
 /*container exercise*/
 
 .exs-container {
-  position: relative;
   display: flex;
   gap: 40px;
   padding: 10px;
@@ -117,42 +122,25 @@ h3 {
 }
 
 .boxecer {
+  border-radius: 10px;
   padding: 5px;
+  max-width: 490px;
+  border: 3px dotted black;
 }
+
 .boxecer p {
-  line-height: 3;
-  font-weight: 700;
-  letter-spacing: 1.4;
-  font-size: 16px;
+  line-height: 1.2;
 }
 .boxecer input {
   text-align: center;
   border: none;
-  height: 2em;
   outline: none;
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.5s;
-  font-weight: bold;
-  font-size: 16px;
+  width: auto;
   border-bottom: 2px dotted black;
-  width: 320px;
 }
-.boxecer input:hover,
-.boxecer input:focus {
-  background-color: white;
-}
-.check {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  padding: 10px;
-  background: green;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.check:hover {
-  background: greenyellow;
+.forsearch {
+  display: none;
 }
