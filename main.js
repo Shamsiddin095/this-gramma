@@ -1,29 +1,3 @@
-/////search input
-// Event listener for input field
-// const unitSearchInput = document.getElementById("unitSearch");
-// if (unitSearchInput) {
-//   unitSearchInput.addEventListener("input", function () {
-//     const searchTerm = this.value.trim().toLowerCase(); // Kiritilgan qidiruv raqami
-//     const containerUnits = document.querySelectorAll(".container-unit");
-
-//     containerUnits.forEach((unit) => {
-//       const unitContent = unit
-//         .querySelector(".forsearch")
-//         .textContent.trim()
-//         .toLowerCase(); // Har bir unitning .forsearch sinfi ichidagi matn
-
-//       // .forsearch sinfi ichidagi matnda qidiruv raqami mavjud bo'lsa unitni ko'rsatish
-//       if (unitContent.includes(searchTerm)) {
-//         unit.style.display = "block";
-//       } else {
-//         unit.style.display = "none"; // Aks holda unitni yashirish
-//       }
-//     });
-//   });
-// }
-
-/////////////////////////////
-
 window.addEventListener("DOMContentLoaded", function () {
   var answers = document.querySelectorAll(".answers span");
   var inputs = document.querySelectorAll(".ans");
@@ -39,12 +13,12 @@ window.addEventListener("DOMContentLoaded", function () {
         input.classList.remove("incorrect");
         input.classList.add("correct");
         input.style.backgroundColor = "lightgreen";
-        input.style.color = "";
+        input.style.color = "black";
       } else {
         input.classList.remove("correct");
         input.classList.add("incorrect");
         input.style.color = "red"; // Qiymat noto'g'ri bo'lsa rangni o'chirish
-
+        input.style.backgroundColor = "transparent";
         correctAnswered = false;
       }
     });
@@ -86,13 +60,15 @@ inputs.forEach((input) => {
 
     // Kiritilgan javob bilan moslashni tekshirish
     if (this.value.trim() === answerText) {
-      this.style.backgroundColor = "lightgreen"; // Agar moslashsa, rangni ozgartirish
+      this.style.backgroundColor = "";
+      this.style.width = "100px"; // Agar moslashsa, rangni ozgartirish
     } else {
       this.style.backgroundColor = ""; // Aks holda, rangni bekor qilish
     }
   });
 });
 // locale storage ///////////////////////////////
+// Function to save the page state to local storage
 // Function to save the page state to local storage
 function savePageState() {
   // Get all inputs
@@ -104,6 +80,7 @@ function savePageState() {
     inputValues[input.id] = {
       value: input.value,
       backgroundColor: input.style.backgroundColor,
+      color: input.style.color,
       width: input.style.width,
     };
   });
@@ -112,7 +89,6 @@ function savePageState() {
   localStorage.setItem("pageState", JSON.stringify(inputValues));
 }
 
-// Function to restore the page state from local storage
 // Function to restore the page state from local storage
 function restorePageState() {
   // Retrieve saved data from local storage
@@ -138,6 +114,9 @@ function restorePageState() {
         if (inputData && inputData.width) {
           input.style.width = inputData.width;
         }
+        if (inputData && inputData.color) {
+          input.style.color = inputData.color; // Matn rangini qayta tiklash
+        }
       }
     });
   }
@@ -154,7 +133,10 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// prev next ///////////////
+// prev next //////////////////////////
+//////////////////////////////////////
+
+////////////////////////////////PREVVV NEXT
 let currentUnitIndex = 0;
 const containerUnits = document.querySelectorAll(".container-unit");
 

@@ -10,9 +10,15 @@
 }
 .container {
   position: relative;
+  background: wheat;
+  position: relative;
   max-width: 1440px;
   margin: 10px auto;
   border: 1px solid black;
+  z-index: 2;
+}
+body {
+  background: black;
 }
 .container-unit {
   display: none;
@@ -129,7 +135,7 @@ h3 {
 }
 
 .boxecer p {
-  line-height: 1.2;
+  line-height: 2;
 }
 .boxecer input {
   text-align: center;
@@ -140,7 +146,41 @@ h3 {
   transition: all 0.5s;
   width: auto;
   border-bottom: 2px dotted black;
+  width: 100px;
+  background-color: transparent;
 }
 .forsearch {
   display: none;
+}
+
+#prev_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  font-size: 200px;
+  background: transparent;
+  border: none;
+  color: wheat;
+  cursor: pointer;
+  top: 50%;
+  left: 100px;
+  z-index: 1;
+}
+#next_btn {
+  position: fixed;
+  font-size: 200px;
+  background: transparent;
+  border: none;
+  color: wheat;
+  cursor: pointer;
+  top: 50%;
+  right: 100px;
+  z-index: 1;
+}
+#unitSearch {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 0px 0px 0px grey;
+  border: none;
 }
